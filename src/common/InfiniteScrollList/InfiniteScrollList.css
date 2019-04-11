@@ -1,0 +1,13 @@
+.InfiniteScrollList {
+  &__spinnerContainer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    opacity: 1;
+    transition: opacity .1s ease-out;
+
+    &--hidden {
+      opacity: 0;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "editor.formatOnSave": true,
+  // Disable for Prettier
+  "javascript.format.enable": false,
+  "prettier.stylelintIntegration": true,
+  "prettier.disableLanguages": ["handlebars", "hbs", "css"],
+  "css.validate": false,
+  "emmet.includeLanguages": {
+    "css": "css",
+    "postcss": "css"
+  },
+  "emmet.syntaxProfiles": {
+    "css": "css",
+    "postcss": "css"
+  },
+  "[handlebars]": { "editor.formatOnSave": false },
+  "[css]": { "editor.formatOnSave": false }
+}

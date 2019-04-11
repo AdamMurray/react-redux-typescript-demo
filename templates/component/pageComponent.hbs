@@ -1,0 +1,67 @@
+import React from 'react'
+import { Dispatch, bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
+import styled from '@emotion/styled'
+
+import * as authActions from '../../state/auth/auth.actions'
+
+import { RootState } from '../../state/reducers'
+
+import { User } from '../../types/user/user.type'
+
+interface StateProps {
+  currentUser: User
+}
+
+interface DispatchProps {
+  actions: typeof authActions // & typeof userActions
+}
+
+type Props = StateProps & DispatchProps
+
+interface State {
+  // TODO: add local state types here
+}
+
+const {{ name }}Wrapper = styled.div`
+  /* ADD CSS TO TASTE */
+`
+
+class {{ name }} extends React.Component<Props, State> {
+  state: State = {
+    // TODO: add local state here
+  }
+
+  componentDidMount() {
+    if (!this.props.currentUser) {
+      this.props.actions.fetchCurrentUserRequest()
+    }
+  }
+
+  render() {
+    const { currentUser } = this.props
+
+    return (
+      <div>
+        {currentUser && (
+          <code>{`{{ name }}: ${currentUser.first} ${currentUser.last}`}</code>
+        )}
+      </div>
+    )
+  }
+}
+
+const mapReduxStateToProps = (state: RootState): StateProps => ({
+  currentUser: state.auth.currentUser
+})
+
+const mapReduxDispatchToProps = (dispatch: Dispatch): DispatchProps => ({
+  actions: {
+    ...bindActionCreators(authActions, dispatch)
+  }
+})
+
+export default connect(
+  mapReduxStateToProps,
+  mapReduxDispatchToProps
+)({{ name }})

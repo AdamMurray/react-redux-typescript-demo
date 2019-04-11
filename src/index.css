@@ -1,0 +1,78 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Helvetica Neue', sans-serif;
+  overflow-y: scroll;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Helvetica Neue Light'),
+    local('HelveticaNeue-Light'),
+    url(/fonts/HelveticaNeue/HelveticaNeueLTPro-Lt.otf)
+    format('opentype');
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Helvetica Neue'),
+    local('HelveticaNeue-Regular'),
+    url(/fonts/HelveticaNeue/HelveticaNeueLTPro.otf)
+    format('opentype');
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Helvetica Neue Medium'),
+    local('HelveticaNeue-Medium'),
+    url(/fonts/HelveticaNeue/HelveticaNeueLTPro-Md.otf)
+    format('opentype');
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Helvetica Neue Bold'),
+    local('HelveticaNeue-Bold'),
+    url(/fonts/HelveticaNeue/HelveticaNeueLTPro-Bd.otf)
+    format('opentype');
+}
+
+/*
+  Pace.js overrides
+  https://github.hubspot.com/pace/docs/welcome/
+*/
+
+.pace {
+  pointer-events: none;
+  user-select: none;
+}
+
+.pace-inactive {
+  display: none;
+}
+
+.pace .pace-progress {
+  background: #1200ff;
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  right: 100%;
+  width: 100%;
+  height: 2px;
+}
